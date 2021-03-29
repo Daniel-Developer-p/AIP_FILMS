@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-    {% for comment in database %}
+    {% for comment in models %}
         <comment class="col-sm">
             <div class="card" style="width: 18rem;">
-                <img src="{{ comment.img_url }}" class="card-img-top">
+                <img src="{{ comment.Article.img_url }}" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">{{ comment.title }}</h5>
-                    <p class="card-text">{{ comment.body }}</p>
+                    <h5 class="card-title">{{ comment.Article.title }}</h5>
+                    <p class="card-text">{{ comment.Article.body }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Средняя оценка пользователей - {{ comment.middle_ball }}</li>
