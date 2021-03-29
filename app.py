@@ -14,7 +14,7 @@ migrate = Migrate(app, db)
 
 @app.route('/')
 def homepage():
-    return render_template('index.html', title='Главная страница', comments=comments)
+    return render_template('index.html', title='Главная страница', articles=Article.query.all())
 
 
 @app.route('/register')
@@ -47,6 +47,8 @@ def create_article():
 
         db.session.add(article)
         db.session.commit()
+
+        return redirect(url_for('homepage'))
 
     return render_template('new_article.html')
 
