@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    {% for comment in comments %}
+    {% for comment in database %}
         <comment class="col-sm">
             <div class="card" style="width: 18rem;">
-                <img src="{{ comment.img }}" class="card-img-top">
+                <img src="{{ comment.img_url }}" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">{{ comment.title }}</h5>
                     <p class="card-text">{{ comment.body }}</p>
