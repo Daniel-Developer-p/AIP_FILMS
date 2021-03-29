@@ -21,3 +21,12 @@ class Article(db.Model):
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     author = db.relationship('User', backref=db.backref('comments', lazy=True))
+
+
+def find_by_text(text: str, articles):
+    result = []
+    text = text.lower()
+    for article in articles:
+        if text in article.title.lower() or text in article.body.lower():
+            result.append(article)
+    return result

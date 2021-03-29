@@ -1,6 +1,5 @@
 from flask import Flask, render_template, abort, request, redirect, url_for
-from comments import comments, find_by_text
-from models import db, User, Article
+from models import db, User, Article, find_by_text
 from flask_migrate import Migrate
 import locale
 
